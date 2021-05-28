@@ -22,52 +22,63 @@
 
 <body bgcolor="skyblue">
     <div class="jumbotron text-center">
+        <form> 
         <table align="center">
             <tr>
                 <td>
-                    <input type="text" placeholder="Name"/>
+                    <div class="form-group"> 
+                        <input type="text" class="form-control" placeholder="Name" id="usr">
+                      </div>
                 </td>
             </tr>
             
             <tr>
                 <td>
-                    <select id="cars">
-                        <option value="volvo">--State-- </option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                    <div class="form-group">                         
+                        <select class="form-control" id="sel1">
+                          <option>-State-</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
                 </td>
             </tr>
              <tr>
                 <td>
-                    <select id="cars">
-                        <option value="volvo">--City/Districts-- </option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                    <div class="form-group">                         
+                        <select class="form-control" id="sel1">
+                          <option>-District/City-</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                     
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="text" placeholder="Email"/>
+                    <div class="form-group"> 
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                      </div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="text" placeholder="Phone(Without country code)(optional)"/>
+                    <div class="form-group"> 
+                        <input type="text" class="form-control" id="phone" placeholder="Phone(Without country code)(optional)">
+                      </div> 
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="submit"> Get Notified</button>
+                    <button type="submit" class="btn btn-primary"> Find Vaccine Slots</button>
                 </td>
             </tr>
          
         </table>
+        </form>
       </div> 
     </body> 
 </html>
