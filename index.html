@@ -21,19 +21,15 @@
 </title>
 
 <body bgcolor="skyblue">
+ <div class="container">
     <div class="jumbotron text-center">
         <form> 
-        <table align="center">
-            <tr>
-                <td>
-                    <div class="form-group"> 
+ 
+                    <div class="form-group .col-sm-4"> 
                         <input type="text" class="form-control" placeholder="Name" id="usr">
                       </div>
-                </td>
-            </tr>
+        
             
-            <tr>
-                <td>
                     <div class="form-group">                         
                         <select class="form-control" id="sel1">
                           <option>-State-</option>
@@ -42,10 +38,7 @@
                           <option>4</option>
                         </select>
                       </div>
-                </td>
-            </tr>
-             <tr>
-                <td>
+                
                     <div class="form-group">                         
                         <select class="form-control" id="sel1">
                           <option>-District/City-</option>
@@ -54,31 +47,21 @@
                           <option>4</option>
                         </select>
                       </div>
-                     
-                </td>
-            </tr>
-            <tr>
-                <td>
+                  
                     <div class="form-group"> 
                         <input type="email" class="form-control" id="email" placeholder="Enter email">
                       </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
+                
                     <div class="form-group"> 
                         <input type="text" class="form-control" id="phone" placeholder="Phone(Without country code)(optional)">
                       </div> 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit" class="btn btn-primary"> Find Vaccine Slots</button>
-                </td>
-            </tr>
-         
-        </table>
+                
+                <div class="container">
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Find Vaccine Slots</button>
+                    <!-- <button type="submit" class="btn btn-primary"> Find Vaccine Slots</button> -->
+                </div>
         </form>
       </div> 
+    </div>
     </body> 
 </html>
