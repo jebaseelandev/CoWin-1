@@ -50,7 +50,21 @@ function loadDistrict(data){
 		//document.getElementById("locality-dropdown").innerHTML = r.state_name;
 	}
 }
+function validateForm(){
+	var nameVal = document.forms["slotSearching"]["name"].value;
+	var stateVal = document.forms["slotSearching"]["state"].value;
+	var districtVal = document.forms["slotSearching"]["district"].value;
+	var emailVal = document.forms["slotSearching"]["email"].value;
+	var phoneVal = document.forms["slotSearching"]["phone"].value;
 
+	if((nameVal == null || nameVal == "") && 
+	(stateVal==null || stateVal=="") && 
+	(districtVal==null || districtVal=="") && 
+	(emailVal==null || emailVal=="" ) && 
+	(phoneVal==null || phoneVal==""))
+	{
+		alert('Field is empty');
+    }}
 function loadSelectedState(value){  
 	let selectedState=value;
 	const url = 'https://cdn-api.co-vin.in/api/v2/admin/location/districts/'+selectedState;
