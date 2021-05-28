@@ -17,12 +17,45 @@ async function getapi(url) {
 	loadSelect(data);
 	//show(data);
 }
+// Defining async function
+async function getdistrictapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		//hideloader();
+	}
+	loadDistrict(data);
+	//show(data);
+}
 // Calling that async function
 getapi(api_url);
 
 // Function to hide the loader
 function hideloader() {
 	document.getElementById('loading').style.display = 'none';
+}
+function loadDistrict(data){
+	let dropdown = $('#district-dropdown');
+	dropdown.empty();
+	dropdown.append('<option selected="true" disabled>Choose District/City</option>');
+	dropdown.prop('selectedIndex', 0);
+
+	for (let r of data.districts) {
+		dropdown.append($('<option></option>').attr('value', r.district_id).text(r.district_name));
+		//document.getElementById("locality-dropdown").innerHTML = r.state_name;
+	}
+}
+
+function loadSelectedState(value){  
+	let selectedState=value;
+	const url = 'https://cdn-api.co-vin.in/api/v2/admin/location/districts/'+selectedState;
+	getdistrictapi(url); 
+	
 }
 function loadSelect(data){
 	let dropdown = $('#locality-dropdown');
