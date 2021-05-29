@@ -50,18 +50,12 @@ function loadDistrict(data){
 		//document.getElementById("locality-dropdown").innerHTML = r.state_name;
 	}
 }
-function validateForm(){
-	var nameVal = document.forms["slotSearching"]["name"].value;
+function validateForm(){ 
 	var stateVal = document.forms["slotSearching"]["state"].value;
-	var districtVal = document.forms["slotSearching"]["district"].value;
-	var emailVal = document.forms["slotSearching"]["email"].value;
-	var phoneVal = document.forms["slotSearching"]["phone"].value;
+	var districtVal = document.forms["slotSearching"]["district"].value; 
 
-	if((nameVal == null || nameVal == "") && 
-	(stateVal==null || stateVal=="") && 
-	(districtVal==null || districtVal=="") && 
-	(emailVal==null || emailVal=="" ) && 
-	(phoneVal==null || phoneVal==""))
+	if((stateVal==null || stateVal=="") && 
+	(districtVal==null || districtVal==""))	 
 	{
 		alert('Field is empty');
     }}
