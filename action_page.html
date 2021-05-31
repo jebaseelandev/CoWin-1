@@ -1,10 +1,48 @@
 <html>
-<head></head>
+<head>
+    <script src="searchScript.js"></script>
+    <h1 align="center">Check your nearest vaccination center and slots availability</h1>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+       .jumbotron {
+      height:100%;
+      width:100%;
+      }
+      .container {
+      width:1025px;
+      }
+      .jumbotron .container {
+      max-width: 100%;
+      } 
+      </style>
+      <script>
+          function ShowHide(id) {
+          var e = document.getElementById(id);
+          e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+          }
+      </script>>
+</head>
 <body>
-<ul>
-<?php for($i=1;$i<=5;$i++){ ?>
-<li>Menu Item <?php echo $i; ?></li>
-<?php } ?>
-</ul>
+  <div class="jumbotron">
+  <div class="container text-center">
+     <div>
+      <input type="button" id="btnTest" value="Search By Map" onclick="ShowHide('result')">
+      <input type="button" id="btnTest" value="Search By PIN" onclick="ShowHide('result')">
+      <input type="button" id="btnTest" value="Search By District" onclick="ShowHide('result')">
+     </div>
+
+     <div id="result" style="display:none;">
+      <input type="button" value="Test" style="color: brown;">
+      <p>Content goes here.</p>
+     </div>
+    </div>
+
+    </div>
+ 
 </body>
 </html>
