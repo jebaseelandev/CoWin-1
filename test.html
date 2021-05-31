@@ -1,31 +1,53 @@
-<table align="center">
-  <tr>
-  <th>
-    Covaxin
-  </th>
-  <th>
-    Covishield
-  </th>
-</tr>
-  <tr>
-  <td>
-    <tr>
-      Hospital name    
-    </tr>
-    <tr>
-      Hospital name    
-    </tr>
+<html>
+<head>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">   
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.jqueryui.min.css"> 
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.3/css/scroller.jqueryui.min.css">
+   
   
-    <tr>
-      Hospital name    
-    </tr>
-    <tr>
-      Hospital name    
-    </tr>
-    <tr>
-      Hospital name    
-    </tr>
-  
-  </td> 
-  </tr>
+
+ <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+ <script src="https://cdn.datatables.net/1.10.24/js/dataTables.jqueryui.min.js"></script>
+ <script src="https://cdn.datatables.net/scroller/2.0.3/js/dataTables.scroller.min.js"></script> 
+   
+</head>
+<body>
+<table id="example" class="display nowrap" style="width:100%">
+  <thead>
+      <tr>
+          <th>Hospital Name</th>
+          <th>Address</th>
+          <th>District Name</th> 
+          <th>Fee Type</th>
+          <th>Age</th>
+          <th>Vaccine</th> 
+      </tr>
+  </thead>
+   
 </table>
+</body>
+</html>
+<script>
+        $('#example').DataTable({
+                ajax: {
+                    url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=512&date=31-05-2021',
+                    dataSrc: "sessions"
+                },
+                columns: [
+                    { data: 'name' },
+                    { data: 'address' },
+                    { data: 'district_name' },
+                    { data: 'fee_type' },
+                    {data:'min_age_limit'},
+                    { data: 'vaccine' }
+                ],
+                "pageLength": 10
+            });
+</script>
