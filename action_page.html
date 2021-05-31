@@ -142,6 +142,29 @@
 
             $("#btnSearch").on("click", function (e) {
             e.preventDefault(); 
+            let droValue=document.getElementById("district-dropdown").value;
+            var today = new Date();
+            var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+            //const disurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id='+droValue+'&'+'date'+'='+date;
+            $("#example").DataTable().destroy()
+            
+            $('#example').DataTable({
+                ajax: {
+                    url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id='+droValue+'&'+'date'+'='+date,
+                    dataSrc: "sessions"
+                },
+                columns: [
+                    { data: 'name' },
+                    { data: 'pincode' },
+                    { data: 'available_capacity' },
+                    { data: 'available_capacity' },
+                    {data:'available_capacity'},
+                    { data: 'fee' }
+                ],
+                "pageLength": 10
+            });
+
+
           });
           });
 </script>
