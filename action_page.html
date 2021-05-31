@@ -34,6 +34,7 @@
 </head>
 <body>
   <div class="jumbotron">
+ 
   <div class="container text-center">
 
     <div class="row">
@@ -54,7 +55,7 @@
          <div id="map" style="display:none;">
           <input type="text" placeholder="Enter the PIN">
           <input type="button" value="Search"/> 
-          <p>Map:The slots availability displayed in the search is provided by the state govt and private hospitals. The total availability slots includes Dose-1 and Dose-2 allotted slots. While we have real-time data, slot availability on the portal changes rapidly. D1: Dose 1, D2: Dose 2</p>
+          <p>Note:The slots availability displayed in the search is provided by the state govt and private hospitals. The total availability slots includes Dose-1 and Dose-2 allotted slots. While we have real-time data, slot availability on the portal changes rapidly. D1: Dose 1, D2: Dose 2</p>
          </div>
          <div id="district" style="display:none;">
  
@@ -70,11 +71,38 @@
             </select>
           </div> 
           <div class="col-md-3">           
-              <button type="submit" class="btn btn-primary btn-sm btn-block">Search</button>
+              <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Search</button>
               <!-- <button type="submit" class="btn btn-primary"> Find Vaccine Slots</button> -->
         
           </div> 
- </div>
+        </div>
+        <div class="text-center" >
+          <p style="font-size: 10px;margin-left: 100;margin-right: 100; text-align: center; ">Note:The slots availability displayed in the search is provided by the state govt and private hospitals. The total availability slots includes Dose-1 and Dose-2 allotted slots. While we have real-time data, slot availability on the portal changes rapidly. D1: Dose 1, D2: Dose 2</p>
+        </div>
+        <div class="row1">
+
+          <div class="col-md-2">                         
+            <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Age 18+</button> 
+          </div>
+        <div class="col-md-2">                         
+          <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Age 45+</button>
+          </div> 
+          <div class="col-md-2">           
+              <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Covaxin</button>         
+          </div> 
+          <div class="col-md-2">           
+            <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Sputnik V</button>         
+        </div> 
+        <div class="col-md-2">           
+          <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Free</button>         
+      </div> 
+      <div class="col-md-2">           
+        <button type="submit" class="btn btn-primary btn-sm btn-block" onclick="validateForm()">Paid</button>         
+    </div> 
+        </div> 
+
+      
+ 
          </div>
          
     
@@ -83,7 +111,7 @@
 
      
     </div>
-
+ 
     </div>
  
 </body>

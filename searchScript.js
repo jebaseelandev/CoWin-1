@@ -104,6 +104,8 @@ function loadDistrict(data){
 		//document.getElementById("locality-dropdown").innerHTML = r.state_name;
 	}
 }
+
+
 function loadSelect(data){
 	let dropdown = $('#locality-dropdown');
 	dropdown.empty();
@@ -119,4 +121,32 @@ function loadSelect(data){
 		dropdown.append($('<option></option>').attr('value', r.state_id).text(r.state_name));
 		//document.getElementById("locality-dropdown").innerHTML = r.state_name;
 	}
+}
+
+function validateForm()
+{
+let droValue=document.getElementById("district-dropdown").value;
+var today = new Date();
+var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+const disurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id='+droValue+'&'+'date'+'='+date;
+getdistrictuapi(disurl);
+}
+
+// Defining async function
+async function getdistrictuapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		//hideloader();
+	}
+	loadDistrictValues(data);
+	//show(data);
+}
+function loadDistrictValues(data){
+     
 }
