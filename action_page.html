@@ -30,16 +30,26 @@
 <body>
   <div class="jumbotron">
   <div class="container text-center">
-     <div>
-      <input type="button" id="btnTest" value="Search By Map" onclick="ShowHide('result')">
-      <input type="button" id="btnTest" value="Search By PIN" onclick="ShowHide('result')">
-      <input type="button" id="btnTest" value="Search By District" onclick="ShowHide('result')">
-     </div>
 
-     <div id="result" style="display:none;">
-      <input type="button" value="Test" style="color: brown;">
-      <p>Content goes here.</p>
-     </div>
+    <div class="row">
+      <div class="col-md-12">
+           <div class="top-bg">
+            <input type="button" id="btnTest" value="Search By Map" onclick="ShowHide('result')">
+            <input type="button" id="btnTest" value="Search By PIN" onclick="ShowHide('result')">
+            <input type="button" id="btnTest" value="Search By District" onclick="ShowHide('result')">
+           </div>
+      </div> 
+      <div class="col-md-12" style="margin-top:50px;">
+      
+        <div id="result" style="display:none;">
+          <input type="text" placeholder="Enter the PIN">
+          <input type="button" value="Search"/> 
+          <p>Note:The slots availability displayed in the search is provided by the state govt and private hospitals. The total availability slots includes Dose-1 and Dose-2 allotted slots. While we have real-time data, slot availability on the portal changes rapidly. D1: Dose 1, D2: Dose 2</p>
+         </div>
+      
+      </div>
+
+     
     </div>
 
     </div>
