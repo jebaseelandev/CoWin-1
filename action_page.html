@@ -137,7 +137,13 @@
                 },
                 
                 columns: [
-                    { data: 'name' },
+                    { data: 'name', 
+                  "render":function(data,type,row){
+                    return data+" "+row.address;
+
+                  }
+                  
+                  },
                     { data: 'pincode' },
                     { data: "available_capacity",
                       "render":function(data,Type,row){
@@ -185,7 +191,11 @@
                     dataSrc: "sessions"
                 },
                 columns: [
-                    { data: 'name'},
+                { data: 'name', 
+                  "render":function(data,type,row){
+                    return data+" "+row.address;
+
+                  }},
                     { data: 'pincode' },
                     { data: "available_capacity",
                       "render":function(data,Type,row){
