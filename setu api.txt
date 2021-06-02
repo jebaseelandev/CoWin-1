@@ -9,3 +9,11 @@ https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=6
 https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=512&date=14-05-2021
 
 https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat=28.72&long=77.14
+
+
+
+
+https://datatables.net/forums/discussion/45381/if-and-else-condition-with-data-tables
+
+https://datatables.net/examples/advanced_init/column_render.html#:~:text=render%20which%20can%20be%20used,a%20cell%2C%20as%20shown%20here
+https://datatables.net/examples/basic_init/data_rendering.html

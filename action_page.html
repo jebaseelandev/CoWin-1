@@ -8,18 +8,16 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">   
-  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.jqueryui.min.css"> 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.3/css/scroller.jqueryui.min.css">   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
- <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
- <script src="https://cdn.datatables.net/1.10.24/js/dataTables.jqueryui.min.js"></script>
- <script src="https://cdn.datatables.net/scroller/2.0.3/js/dataTables.scroller.min.js"></script> 
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">   
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.jqueryui.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.3/css/scroller.jqueryui.min.css">   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.jqueryui.min.js"></script>
+    <script src="https://cdn.datatables.net/scroller/2.0.3/js/dataTables.scroller.min.js"></script> 
     <style>
        .jumbotron {
       height:100%;
@@ -101,16 +99,17 @@
                   <th>Covishield</th> 
                   <th>Covaxin</th>
                   <th>Sputnik</th>
-                  <th>Price</th> 
+                  <th>Price</th>  
               </tr>
           </thead>
-           <tbody>
-            <td id="hospitalName">Hospital Name</td>
+           <tbody> 
+              <td id="hospitalName">Hospital Name</td>
+         
             <td id="pincode">Pincode</td>
             <td id="covidshield">Covishield</td> 
             <td id="covaxin">Covaxin</td>
             <td id="sputnik">Sputnik</td>
-            <td id="price">Price</td> 
+            <td id="price">Price</td>  
            </tbody>
         </table>
 </div>
@@ -140,10 +139,34 @@
                 columns: [
                     { data: 'name' },
                     { data: 'pincode' },
-                    { data: 'available_capacity' },
-                    { data: 'available_capacity' },
-                    {data:'available_capacity'},
-                    { data: 'fee' }                    
+                    { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'COVISHIELD') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  },
+                  { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'COVAXIN') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  },
+                  { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'SPUTNIK') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  }, 
+                    {data: 'fee' }
                 ],
                 "pageLength": 10
             });
@@ -162,11 +185,35 @@
                     dataSrc: "sessions"
                 },
                 columns: [
-                    { data: 'name' },
+                    { data: 'name'},
                     { data: 'pincode' },
-                    { data: 'available_capacity' },
-                    { data: 'available_capacity' },
-                    {data:'available_capacity'},
+                    { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'COVISHIELD') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  },
+                  { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'COVAXIN') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  },
+                  { data: "available_capacity",
+                      "render":function(data,Type,row){
+                        if ( row.vaccine === 'SPUTNIK') {
+                          return row.available_capacity;}
+                          else{
+                            return 0;
+                          }
+                      } 
+                  }, 
                     { data: 'fee' }
                 ],
                 "pageLength": 10
